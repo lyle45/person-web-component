@@ -1,0 +1,10 @@
+<md-list-item class="person" layout-gt-sm="column">
+    <img ng-src="img/{{$ctrl.person.image}}" class="md-avatar avatar-image" alt="{{$ctrl.person.fullName}}"/>
+    <div class="md-list-item-text" layout="column">
+        <h3>{{ $ctrl.person.fullName }}</h3>
+        <h4>{{ $ctrl.person.position}}</h4>
+        <h4 class="company-text">{{ $ctrl.person.company}}</h4>
+        <p class="summary-text">{{ $ctrl.person.summary }}</p>
+    </div>
+</md-list-item>
+<md-divider></md-divider>

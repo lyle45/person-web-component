@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngMaterial']);
 
 app.run(['$rootScope', function($rootScope) {
     $rootScope.persons = [{
@@ -43,16 +43,29 @@ app.run(['$rootScope', function($rootScope) {
         position: 'Project Manager',
         company: 'Wochit',
         summary: 'Innovation. Startups. Entrepreneurship. Technology. People. NBA.'
-    }]
-
-    $rootScope.person = $rootScope.persons[0];
-
-}])
-
-app.directive('person', [function () {
-	return {
-		restrict: 'E',
-		templateUrl: 'views/person.html',
-		replace: true
-	};
+    }];
 }]);
+
+class PeopleList {
+
+    constructor() {
+    }
+}
+
+app.component('peopleList', {
+    templateUrl: 'js/app/components/people-list/people-list.html',
+    controller: PeopleList
+});
+class Person {
+
+    constructor() {
+    }
+}
+
+app.component('person', {
+    templateUrl: 'js/app/components/person/person.html',
+    controller: Person,
+    bindings: {
+        person: '='
+    }
+});

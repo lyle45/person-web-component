@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngMaterial']);
 
 app.run(['$rootScope', function($rootScope) {
     $rootScope.persons = [{
@@ -43,8 +43,5 @@ app.run(['$rootScope', function($rootScope) {
         position: 'Project Manager',
         company: 'Wochit',
         summary: 'Innovation. Startups. Entrepreneurship. Technology. People. NBA.'
-    }]
-
-    $rootScope.person = $rootScope.persons[0];
-
-}])
+    }];
+}]);

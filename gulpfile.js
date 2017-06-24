@@ -8,8 +8,12 @@ var path = require('path'),
 var libs = [
     'bower_components/angular/angular.js',
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/bootstrap/dist/js/bootstrap.js'
-]
+    'bower_components/bootstrap/dist/js/bootstrap.js',
+    'bower_components/angular-animate/angular-animate.js',
+    'bower_components/angular-aria/angular-aria.js',
+    'bower_components/angular-messages/angular-messages.js',
+    'bower_components/angular-material/angular-material.js'
+];
 
 gulp.task('js:lib', function() {
     gulp.src(libs)
@@ -18,7 +22,7 @@ gulp.task('js:lib', function() {
 });
 
 gulp.task('js:app', function() {
-    gulp.src('public/js/app/**/*')
+    gulp.src('public/js/app/**/*.js')
         .pipe(concat('app.js'))
         .pipe(gulp.dest('./public/js'))
         .pipe(livereload());
