@@ -1,10 +1,11 @@
-<md-list-item class="person" layout-gt-sm="column">
-    <img ng-src="img/{{$ctrl.person.image}}" class="md-avatar avatar-image" alt="{{$ctrl.person.fullName}}"/>
+<md-list-item class="person" ng-class="{'large-view': $ctrl.size === 'large', 'medium-view': $ctrl.size === 'medium', 'small-view': $ctrl.size === 'small'}" layout="{{$ctrl.layout}}">
+    <img ng-src="img/{{$ctrl.person.image}}" class="md-avatar"
+         ng-class="{'avatar-image-large': $ctrl.size === 'large', 'avatar-image-medium': $ctrl.size === 'medium'}"
+         ng-if="!($ctrl.size === 'small')" alt="{{$ctrl.person.fullName}}"/>
     <div class="md-list-item-text" layout="column">
         <h3>{{ $ctrl.person.fullName }}</h3>
         <h4>{{ $ctrl.person.position}}</h4>
-        <h4 class="company-text">{{ $ctrl.person.company}}</h4>
-        <p class="summary-text">{{ $ctrl.person.summary }}</p>
+        <h4 class="company-text" ng-if="!($ctrl.size === 'small')">{{ $ctrl.person.company}}</h4>
+        <p class="summary-text" ng-if="$ctrl.size === 'large'">{{ $ctrl.person.summary }}</p>
     </div>
 </md-list-item>
-<md-divider></md-divider>

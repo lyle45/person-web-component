@@ -44,4 +44,6 @@ app.run(['$rootScope', function($rootScope) {
         company: 'Wochit',
         summary: 'Innovation. Startups. Entrepreneurship. Technology. People. NBA.'
     }];
+
+    $rootScope.person = $rootScope.persons[0]
 }]);

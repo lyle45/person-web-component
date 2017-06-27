@@ -44,6 +44,8 @@ app.run(['$rootScope', function($rootScope) {
         company: 'Wochit',
         summary: 'Innovation. Startups. Entrepreneurship. Technology. People. NBA.'
     }];
+
+    $rootScope.person = $rootScope.persons[0]
 }]);
 
 class PeopleList {
@@ -60,12 +62,22 @@ class Person {
 
     constructor() {
     }
+
+    $onInit() {
+        if (this.size === "large") {
+            this.layout = "column"
+        } else {
+            this.layout = "row";
+        }
+    }
 }
+
 
 app.component('person', {
     templateUrl: 'js/app/components/person/person.html',
     controller: Person,
     bindings: {
-        person: '='
+        person: '=',
+        size: '@'
     }
 });

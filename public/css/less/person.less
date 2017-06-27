@@ -1,28 +1,45 @@
-.person {
-	text-align: center;
+md-content {
+  background-color: #ccc !important;
+  overflow: hidden;
 }
-.avatar-image {
+
+md-list {
+  height:650px;
+  overflow: hidden;
+}
+
+md-list-item {
+  margin: 0 12px 0 12px;
+  background: white;
+}
+
+.avatar-image-large {
   height: 300px !important;
   width: 300px !important;
 }
-@media only screen and (max-width: 960px) {
-  .person {
-    text-align: left  ;
-  }
-  .avatar-image {
-    height: 100px !important;
-    width: 100px !important;
-  }
-  .summary-text {
-    display: none
-  }
+
+.large-view {
+  text-align: center;
+  height: 650px;
 }
 
-@media only screen and (max-width : 600px) {
-  .avatar-image {
-    display: none;
-  }
-  .company-text {
-    display: none;
-  }
+.medium-view {
+  text-align: left;
+  height: 130px;
+  margin-bottom: 43px;
+}
+
+.small-view {
+  text-align: left;
+  height: 75px;
+  margin-bottom: 20.5px;
+}
+
+.small-view h3, .small-view h4 {
+  font-size: 1em;
+}
+
+.avatar-image-medium {
+  height: 100px !important;
+  width: 100px !important;
 }
